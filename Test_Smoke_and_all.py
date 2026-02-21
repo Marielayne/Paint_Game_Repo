@@ -1,1 +1,0 @@
-""" Smoke test and unittest to ensure quiz works correctly """
