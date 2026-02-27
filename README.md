@@ -22,46 +22,47 @@ The images below show the frame work design used to guide the GUI build process 
 - The code must then save the data entered by the team for use during the quiz. 
 
 **2.	Input Validation:**
-•	The GUI should prevent the game from starting if no team name is entered,
-•	The member names should be reasonable with no numbers or special characters except for a hyphen to allow double-barrelled names,
-•	The GUI should ignore blank player fields as players may not realise the impact that could have on the code and thus, the data stored, 
-•	The GUI will not allow players to skip a question. 
+- The GUI should prevent the game from starting if no team name is entered,
+- The member names should be reasonable with no numbers or special characters except for a hyphen to allow double-barrelled names,
+- The GUI should ignore blank player fields as players may not realise the impact that could have on the code and thus, the data stored,
+- The GUI will not allow players to skip a question. 
 
 **3.	Quiz functionality:**
-•	The quiz will display one question at a time,
-•	The quiz will be multiple questions,
-•	The user should be able to submit an answer for each question,
-•	The GUI should check that answer against the correct selection,
-•	The GUI will store that answer to count towards a score that will be provided at the end of the quiz,
-•	The GUI will send a message box indicating if the users got the question correct.
-•	The GUI will calculate the percentage of their scores and reflect this on the end screen,
-•	The quiz will allow the users to repeat the quiz.
+- The quiz will display one question at a time,
+- The quiz will be multiple questions,
+- The user should be able to submit an answer for each question,
+- The GUI should check that answer against the correct selection,
+- The GUI will store that answer to count towards a score that will be provided at the end of the quiz,
+- The GUI will send a message box indicating if the users got the question correct,
+- The GUI will calculate the percentage of their scores and reflect this on the end screen,
+- The quiz will allow the users to repeat the quiz.
 
 **4.	Data Storage:**
-•	The GUI will save the data to a csv file and allow multiple teams to submit to the same csv,
-•	The system shall create the csv if it does not already exist,
-•	The storage data shall include “Team name” “Department”, “Team Members”, “Score”, “Percentage”,
-•	All the team members will be stored in one column to negate the effects of multiple players changing the number of columns required for the csv. Names will be stored as string.
+- The GUI will save the data to a csv file and allow multiple teams to submit to the same csv,
+- The system shall create the csv if it does not already exist,
+- The storage data shall include “Team name” “Department”, “Team Members”, “Score”, “Percentage”,
+- All the team members will be stored in one column to negate the effects of multiple players changing the number of columns required for the csv. Names will be stored as string.
 
 #### Non-Functional Requirements:
 **1.	Usability:**
-•	The GUI should be clear and easy to read allowing all to be able to use the interface regardless of skill or learning difficulty, 
-•	The GUI should have clear instructions,
-•	Layout should remain consistent throughout.
-2.	Performance:
-•	The GUI should run smoothly with no noticeable delay,
-•	The GUI should handle up to 10 participants without performance restrictions,
-•	The GUI shall not crash and break out of code due to error, 
-•	The data should be saved safely to avoid loss of previous results. 
+- The GUI should be clear and easy to read allowing all to be able to use the interface regardless of skill or learning difficulty,
+- The GUI should have clear instructions,
+- Layout should remain consistent throughout.
+  
+**2.	Performance:**
+- The GUI should run smoothly with no noticeable delay,
+- The GUI should handle up to 10 participants without performance restrictions,
+- The GUI shall not crash and break out of code due to error,
+- The data should be saved safely to avoid loss of previous results. 
 
 **3.	Maintainability:**
-•	The GUI should use classes for efficient storage and calling of functions and attributes and to allow future expansion,
-•	Quiz data shall be stored externally to allow easy future updates without interaction with main GUI code,
-The GUI code should be modular to allow readability and and more efficient processing. 
+- The GUI should use classes for efficient storage and calling of functions and attributes and to allow future expansion,
+- Quiz data shall be stored externally to allow easy future updates without interaction with main GUI code,
+- The GUI code should be modular to allow readability and and more efficient processing. 
 
 **4.	Portability:**
-•	The GUI should work on both Mac IOS and Windows IOS,
-•	The system should rely on standard Python libraries (including Tkinter, csv, os, random and re) for ease of use for future developers and to encourage longevity.
+- The GUI should work on both Mac IOS and Windows IOS,
+- The system should rely on standard Python libraries (including Tkinter, csv, os, random and re) for ease of use for future developers and to encourage longevity.
 
 #### GUI Framework with Figma
 ![Alt Text](https://github.com/Marielayne/Paint_Game_Repo/blob/main/1.png)
