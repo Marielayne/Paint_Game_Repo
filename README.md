@@ -7,5 +7,8 @@ The department in which we work focuses on interior wall paint primarily used fo
 
 ![Alt Text](https://www.ipcm.it/upload/img/c/600x400-AkzoNobelPowersMcLarens2025F1SeasonwithAdvancedCoatingsTechnology.jpg)
 
+### Design
+![Alt Text](https://github.com/Marielayne/Paint_Game_Repo/blob/main/1.png)
+
 ### References
  [Image 1: AkzoNobel - Sikkens coating for McLaren F1 car](https://www.ipcm.it/en/post/akzonobel-powers-mclarens-2025-f1.aspx)
