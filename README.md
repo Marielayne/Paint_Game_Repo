@@ -58,10 +58,10 @@ The images below show the frame work design used to guide the GUI build process 
 **3.	Maintainability:**
 - The GUI should use classes for efficient storage and calling of functions and attributes and to allow future expansion,
 - Quiz data shall be stored externally to allow easy future updates without interaction with main GUI code,
-- The GUI code should be modular to allow readability and and more efficient processing. 
+- The GUI code should be modular to allow readability and more efficient processing. 
 
 **4.	Portability:**
-- The GUI should work on both Mac IOS and Windows IOS,
+- The GUI should work on both Mac OS and Windows OS,
 - The system should rely on standard Python libraries (including Tkinter, csv, os, random and re) for ease of use for future developers and to encourage longevity.
 
 #### GUI Framework with Figma
@@ -114,5 +114,49 @@ My tests did pass however, I do not have enough tests to cover all the functions
 Such example includes the validation of the member names. I tried to include a regex code to prevent unreasonable entries, however, I forgot to include this ahead of time and once the code was written, it was too hard to fix. Hence, the importance of planning the TDD better ahead of time. 
 
 ### Documentation
+#### User Documentation
+
+**Enter Team Details**
+- Team Name (required)
+- Department (select from dropdown: R&D, Sales, Supply chain, Retail, Customer service)
+- Team Size (1–10)
+- Enter each team member’s name in the dynamically generated fields
+
+**Start the quiz**
+- Click the button "Start Quiz" to progress to the next screen
+
+**Answer Questions**
+- Select one option per question
+- Click Submit Answer
+- Popups show if the answer is correct or incorrect
+- Select okay and move on to the next question
+
+**View Results**
+- Final score and percentage are displayed
+- Options: Restart or Quit
+
+**CSV Storage**
+- Results are automatically saved to quiz_results.csv in the project folder
+- Includes: Team Name, Department, Member Names, Score, Percentage
+
+**Features**
+- Dynamic team member input based on team size
+- Multiple-choice questions with instant feedback
+- Tracks score and calculates percentage
+- Saves results to CSV
+- Single-window GUI with restart/quit options
+  
+#### Technical Documentation
+**Requirements**
+Software:
+- Python 3.8 or higher – The code uses modern Python syntax and modules [Download Python from here and select your operating system](https://www.python.org/downloads/)
+- Tkinter module – Used for the GUI. Usually included with standard Python installations
+- CSV module – Standard Python library, no extra installation required
+- OS – Compatible with Windows, macOS, and Linux
+
+### Evaluation
+
 ### References
  [Image 1: AkzoNobel - Sikkens coating for McLaren F1 car](https://www.ipcm.it/en/post/akzonobel-powers-mclarens-2025-f1.aspx)
+ [Benefits of unittesting](https://medium.com/@anandvlinkedin/test-driven-development-the-unit-testing-advantage-e2f64024de29)
+ 
