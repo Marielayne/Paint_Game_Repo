@@ -281,65 +281,65 @@ The parent class team stores the basic information regarding the team that is co
 This section of code generally focusses on setting up the GUI. For instance, there is a lot of code regarding formatting of input fields. Such examples include lines **75 – 80**. This part of the code shows the code that decides how the name input fields would look and provides the geographical code for where the input field should be rooted. Row **85 – 116** is a bit more complicated as the aim was to increase the number of fields or decrease them depending on the number of team members. 
 
 """
-        # Department Dropdown
-            dept_frame = tk.Frame(root, bg=BG_COLOR)
-            dept_frame.pack(pady=10)
-            tk.Label(dept_frame, text="Department:", font=BODY_FONT, bg=BG_COLOR).grid(row=0, column=0, padx=5)
-            departments = ["R&D", "Sales", "Supply chain", "Retail", "Customer service"]
-            selected_department = tk.StringVar(value=departments[0])
-            dept_menu = tk.OptionMenu(dept_frame, selected_department, *departments)
-            dept_menu.grid(row=0, column=1, padx=5)
-        
-            # Member Count & Dynamic Fields
-            count_frame = tk.Frame(root, bg=BG_COLOR)
-            count_frame.pack(pady=10)
-            tk.Label(count_frame, text="Team Size:", font=BODY_FONT, bg=BG_COLOR).grid(row=0, column=0, padx=5)
-            members_count = tk.IntVar(value=1)
-            count_spinbox = tk.Spinbox(count_frame, from_=1, to=10, width=5, font=BODY_FONT,
-                                       textvariable=members_count, command=lambda: update_members_fields())
-            count_spinbox.grid(row=0, column=1, padx=5)
-        
-            members_container = tk.Frame(root, bg=BG_COLOR)
-            members_container.pack(pady=10)
-            member_entries = []
-        
-            def update_members_fields():
-                for widget in members_container.winfo_children(): widget.destroy()
-                member_entries.clear()
-                for i in range(members_count.get()):
-                    row = tk.Frame(members_container, bg=BG_COLOR)
-                    row.pack(pady=2)
-                    tk.Label(row, text=f"Member {i+1}:", font=BODY_FONT, bg=BG_COLOR).grid(row=0, column=0)
-                    entry = tk.Entry(row, font=BODY_FONT, width=25)
-                    entry.grid(row=0, column=1)
-                    member_entries.append(entry)
-        
-            update_members_fields()
+                # Department Dropdown
+                    dept_frame = tk.Frame(root, bg=BG_COLOR)
+                    dept_frame.pack(pady=10)
+                    tk.Label(dept_frame, text="Department:", font=BODY_FONT, bg=BG_COLOR).grid(row=0, column=0, padx=5)
+                    departments = ["R&D", "Sales", "Supply chain", "Retail", "Customer service"]
+                    selected_department = tk.StringVar(value=departments[0])
+                    dept_menu = tk.OptionMenu(dept_frame, selected_department, *departments)
+                    dept_menu.grid(row=0, column=1, padx=5)
+                
+                    # Member Count & Dynamic Fields
+                    count_frame = tk.Frame(root, bg=BG_COLOR)
+                    count_frame.pack(pady=10)
+                    tk.Label(count_frame, text="Team Size:", font=BODY_FONT, bg=BG_COLOR).grid(row=0, column=0, padx=5)
+                    members_count = tk.IntVar(value=1)
+                    count_spinbox = tk.Spinbox(count_frame, from_=1, to=10, width=5, font=BODY_FONT,
+                                               textvariable=members_count, command=lambda: update_members_fields())
+                    count_spinbox.grid(row=0, column=1, padx=5)
+                
+                    members_container = tk.Frame(root, bg=BG_COLOR)
+                    members_container.pack(pady=10)
+                    member_entries = []
+                
+                    def update_members_fields():
+                        for widget in members_container.winfo_children(): widget.destroy()
+                        member_entries.clear()
+                        for i in range(members_count.get()):
+                            row = tk.Frame(members_container, bg=BG_COLOR)
+                            row.pack(pady=2)
+                            tk.Label(row, text=f"Member {i+1}:", font=BODY_FONT, bg=BG_COLOR).grid(row=0, column=0)
+                            entry = tk.Entry(row, font=BODY_FONT, width=25)
+                            entry.grid(row=0, column=1)
+                            member_entries.append(entry)
+                
+                    update_members_fields()
 """
 
 The code for the dynamic team members fields is broken down in to digestible chunks; Department dropdown, member count and dynamic fields and update members fields. Department dropdown places the widget to the GUI, providing the departments than can be selected in a list. The selected input is then stored as a string. The members count and dynamic field section places the widget by creating the frame, it then stores the number of members in the variable “members_count” and automatically updates when the user changes the value in the spinbox. The default value is 1. The code then counts the values in the spinbox and defines a limit of 1 – 10 can be created and destroyed. Every time a user increases or reduces the value in the spinbox, the number of member fields will change as the code updates the member’s field. This is because “updates_members_fields()” updates automatically. 
 
 """
-def start_quiz_logic():
-        global team_name_val, dept_val, member_names, question_index, score
-        team_name_val = team_name_entry.get().strip()
-        dept_val = selected_department.get()
-        member_names = [e.get().strip() for e in member_entries if e.get().strip()]
-        
-
-        # ensures a name is entered
-        if not team_name_val:
-            messagebox.showwarning("Wait!", "Your team needs a name!")
-            return
-
-
-        question_index = 0
-        score = 0
-        show_question()
-        
-
-    tk.Button(root, text="Start Quiz", font=("Arial", 14, "bold"),
-              command=start_quiz_logic, bg="#4CAF50", fg="black").pack(pady=20)
+                    def start_quiz_logic():
+                            global team_name_val, dept_val, member_names, question_index, score
+                            team_name_val = team_name_entry.get().strip()
+                            dept_val = selected_department.get()
+                            member_names = [e.get().strip() for e in member_entries if e.get().strip()]
+                            
+                    
+                            # ensures a name is entered
+                            if not team_name_val:
+                                messagebox.showwarning("Wait!", "Your team needs a name!")
+                                return
+                    
+                    
+                            question_index = 0
+                            score = 0
+                            show_question()
+                            
+                    
+                        tk.Button(root, text="Start Quiz", font=("Arial", 14, "bold"),
+                                  command=start_quiz_logic, bg="#4CAF50", fg="black").pack(pady=20)
 """
 
 This portion of the code shows a function which allows the quiz to function as a quiz. It calls upon global variables which allows the code to be used across different functions within the app. Without this, Python would treat them as local variables and other functions such as “show_question()” wouldn’t see the updated values. This then appears multiple times throughout the remainder of the code. 
@@ -347,55 +347,55 @@ This code uses .get().strip() which is a simple validation process to remove acc
 The code then gets the data such as selected department, member names, (which have been stripped) and stores the data in preparation for the start of the quiz. 
 
 """
-def show_question():
-    global question_index, final_result_obj
-    clear_screen()
-    if question_index >= len(questions):
-        # Create the QuizResult object now that the quiz is over
-        final_result_obj = QuizResult(team_name_val, dept_val, member_names, score, len(questions))
-        save_to_csv()
-        show_results()
-        return
-
-    tk.Label(root, text=f"Question {question_index+1}", font=BODY_FONT, bg=BG_COLOR).pack(pady=10)
-    tk.Label(root, text=questions[question_index], font=("Arial", 13, "bold"), wraplength=600, bg=BG_COLOR).pack(pady=15)
-
-    selected_option.set("None")
-    for i, option in enumerate(options[question_index], start=1):
-        tk.Radiobutton(root, text=option, variable=selected_option, value=str(i),
-                       font=BODY_FONT, bg=BG_COLOR).pack(anchor="w", padx=150)
-
-    tk.Button(root, text="Submit Answer", font=BODY_FONT, command=check_answer).pack(pady=30)
-
-# ensures an answer is selected
-def check_answer():
-    global question_index, score
-    guess = selected_option.get()
-    if guess == "None":
-        messagebox.showwarning("Selection Required", "Please pick an option!")
-        return
-
-    if guess == answers[question_index]:
-        score += 1
-        messagebox.showinfo("Correct!", random.choice(G_messages))
-    else:
-        messagebox.showinfo("Wrong", f"{random.choice(B_messages)}\nAnswer: {answers[question_index]}")
-
-    question_index += 1
-    show_question()
-
-def show_results():
-    clear_screen()
-    tk.Label(root, text="QUIZ FINISHED", font=TITLE_FONT, bg=BG_COLOR).pack(pady=30)
-    # Pulling data from the object for the final screen
-    tk.Label(root, text=f"Team: {final_result_obj.name}", font=BODY_FONT, bg=BG_COLOR).pack()
-    tk.Label(root, text=f"Score: {final_result_obj.percentage}%", font=("Arial", 14, "bold"), bg=BG_COLOR).pack(pady=10)
-    
-    tk.Button(root, text="Restart", font=BODY_FONT, command=show_welcome).pack(pady=10)
-    tk.Button(root, text="Quit", font=BODY_FONT, command=root.destroy).pack()
-
-def clear_screen():
-    for widget in root.winfo_children(): widget.destroy()
+              def show_question():
+                  global question_index, final_result_obj
+                  clear_screen()
+                  if question_index >= len(questions):
+                      # Create the QuizResult object now that the quiz is over
+                      final_result_obj = QuizResult(team_name_val, dept_val, member_names, score, len(questions))
+                      save_to_csv()
+                      show_results()
+                      return
+              
+                  tk.Label(root, text=f"Question {question_index+1}", font=BODY_FONT, bg=BG_COLOR).pack(pady=10)
+                  tk.Label(root, text=questions[question_index], font=("Arial", 13, "bold"), wraplength=600, bg=BG_COLOR).pack(pady=15)
+              
+                  selected_option.set("None")
+                  for i, option in enumerate(options[question_index], start=1):
+                      tk.Radiobutton(root, text=option, variable=selected_option, value=str(i),
+                                     font=BODY_FONT, bg=BG_COLOR).pack(anchor="w", padx=150)
+              
+                  tk.Button(root, text="Submit Answer", font=BODY_FONT, command=check_answer).pack(pady=30)
+              
+              # ensures an answer is selected
+              def check_answer():
+                  global question_index, score
+                  guess = selected_option.get()
+                  if guess == "None":
+                      messagebox.showwarning("Selection Required", "Please pick an option!")
+                      return
+              
+                  if guess == answers[question_index]:
+                      score += 1
+                      messagebox.showinfo("Correct!", random.choice(G_messages))
+                  else:
+                      messagebox.showinfo("Wrong", f"{random.choice(B_messages)}\nAnswer: {answers[question_index]}")
+              
+                  question_index += 1
+                  show_question()
+              
+              def show_results():
+                  clear_screen()
+                  tk.Label(root, text="QUIZ FINISHED", font=TITLE_FONT, bg=BG_COLOR).pack(pady=30)
+                  # Pulling data from the object for the final screen
+                  tk.Label(root, text=f"Team: {final_result_obj.name}", font=BODY_FONT, bg=BG_COLOR).pack()
+                  tk.Label(root, text=f"Score: {final_result_obj.percentage}%", font=("Arial", 14, "bold"), bg=BG_COLOR).pack(pady=10)
+                  
+                  tk.Button(root, text="Restart", font=BODY_FONT, command=show_welcome).pack(pady=10)
+                  tk.Button(root, text="Quit", font=BODY_FONT, command=root.destroy).pack()
+              
+              def clear_screen():
+                  for widget in root.winfo_children(): widget.destroy()
 """
 
 This section of code is dedicated to defining functions that show the questions, check the answers and finally show the results. It calls upon the global variables again to track which question the user is on, and then ends the quiz once “if question_index >= len(questions)” has counted through all the questions stored in the questions variables in the question file. It then prints the stored and calculated result to the user so they can see their score or continues to cycle through the questions. 
