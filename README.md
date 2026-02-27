@@ -148,7 +148,7 @@ Such example includes the validation of the member names. I tried to include a r
   
 #### Technical Documentation
 **Requirements**
-Software:
+
 - Python 3.8 or higher – The code uses modern Python syntax and modules [Download Python from here and select your operating system](https://www.python.org/downloads/)
 - Tkinter module – Used for the GUI. Usually included with standard Python installations
 - CSV module – Standard Python library, no extra installation required
