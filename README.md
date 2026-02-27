@@ -242,7 +242,7 @@ The parent class team stores the basic information regarding the team that is co
           
               tk.Button(root, text="Submit Answer", font=BODY_FONT, command=check_answer).pack(pady=30)
           
-          # ensures an answer is selected
+           ensures an answer is selected
           def check_answer():
               global question_index, score
               guess = selected_option.get()
