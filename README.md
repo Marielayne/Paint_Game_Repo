@@ -16,7 +16,7 @@ The images below show the frame work design used to guide the GUI build process 
 
 #### Functional Requirements:
 **1.	Team Setup:**
-•	The team need to be able to enter their team name before starting the quiz,
+• The team need to be able to enter their team name before starting the quiz,
 •	The department will need to be selected from a pre-defined list to prevent incorrect selection. This ensures easy filtering and processing of data later when it comes to analysing,
 •	The team can choose the size of the team (1-10) and enter the player names as required,
 •	The code must then save the data entered by the team for use during the quiz. 
