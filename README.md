@@ -111,8 +111,7 @@ class QuizResult(Team):
             "Members": ", ".join(self.members),
             "Score": f"{self.score}/{self.total}",
             "Percentage": f"{self.percentage}%"
-        }
-"""
+        }"""
 
 This section defines the classes, its attributes and the functions. It is an example of object-oriented programming (OOP). Doing this allowed me to structure objects instead of using lots of separate variables. The aim was to keep the main GUI file clear and easy to read for future developers to take over or make amends. The question data stored in the child class is stored in another file to maintain readability and allow for changes to be made without risking any code in the main GUI. This is because any changes to questions or answers are stored in another file. The classes just call upon these variables stored in dictionaries and tuples in another file. 
 
