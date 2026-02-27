@@ -75,13 +75,13 @@ The images below show the frame work design used to guide the GUI build process 
 
 ### Development 
 """
-import tkinter as tk
-from tkinter import messagebox
-import random
-import re
-import csv
-import os
-from question_data import questions, options, answers, G_messages, B_messages
+    import tkinter as tk
+    from tkinter import messagebox
+    import random
+    import re
+    import csv
+    import os
+    from question_data import questions, options, answers, G_messages, B_messages
 """
 
 This section of code imports relevant modules and libraries to allow the code to work. Tkinter is the library used to generate the GUI window and pin the user input elements to the window. It allows you to select the type of input fields, the location of those fields, the colour of the fields, text and the background and more. It is all related to creating the Graphical User Interface. Random is a library that allows the generation of random data which you can either predefine or allow Python to select from its pre-existing library. This GUI uses it to randomise the responses for the user after entering an answer. csv allows for the developer to read and write data into a csv. This GUI uses it to get data from the input fields and append a csv to create a dataset. os is used to ensure the csv can be saved to Mac or Windows as their operating systems work differently. 
