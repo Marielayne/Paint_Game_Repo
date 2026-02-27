@@ -113,6 +113,7 @@ I favoured this method of manual testing which involves running the programme ea
 My tests did pass however, I do not have enough tests to cover all the functions within my GUI. This is due to lack of forward thinking while writing the unit test and using manual tests to replace this. 
 Such example includes the validation of the member names. I tried to include a regex code to prevent unreasonable entries, however, I forgot to include this ahead of time and once the code was written, it was too hard to fix. Hence, the importance of planning the TDD better ahead of time. 
 
+![Alt Text](https://github.com/Marielayne/Paint_Game_Repo/commit/eb8d2ce6e96bc3344ee90a30993204c36505b480)
 ### Documentation
 #### User Documentation
 
