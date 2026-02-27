@@ -70,9 +70,37 @@ The images below show the frame work design used to guide the GUI build process 
 ![Alt Text](https://github.com/Marielayne/Paint_Game_Repo/blob/main/3.png)
 ![Alt Text](https://github.com/Marielayne/Paint_Game_Repo/blob/main/4.png)
 
-
 #### Class Diagram with draw.io
 ![Alt Text](https://github.com/Marielayne/Paint_Game_Repo/blob/main/C.D..png)
+
+### Development 
+Line 1 – 7
+
+This section of code imports relevant modules and libraries to allow the code to work. Tkinter is the library used to generate the GUI window and pin the user input elements to the window. It allows you to select the type of input fields, the location of those fields, the colour of the fields, text and the background and more. It is all related to creating the Graphical User Interface. Random is a library that allows the generation of random data which you can either predefine or allow Python to select from its pre-existing library. This GUI uses it to randomise the responses for the user after entering an answer. csv allows for the developer to read and write data into a csv. This GUI uses it to get data from the input fields and append a csv to create a dataset. os is used to ensure the csv can be saved to Mac or Windows as their operating systems work differently. 
+
+Lines 9 – 33
+
+This section defines the classes, its attributes and the functions. It is an example of object-oriented programming (OOP). Doing this allowed me to structure objects instead of using lots of separate variables. The aim was to keep the main GUI file clear and easy to read for future developers to take over or make amends. The question data stored in the child class is stored in another file to maintain readability and allow for changes to be made without risking any code in the main GUI. This is because any changes to questions or answers are stored in another file. The classes just call upon these variables stored in dictionaries and tuples in another file. 
+
+The parent class team stores the basic information regarding the team that is collected on the first page. From there the child class inherits this team data e.g. the team name and members and then stores the quiz answers and running total in relation the data acquired from the parent class. “def __init__” counts the scores while “def get_csv_data” frames the csv file and how all the data will be presented in csv format. 
+
+Line 35 – 192
+
+This section of code generally focusses on setting up the GUI. For instance, there is a lot of code regarding formatting of input fields. Such examples include lines **75 – 80**. This part of the code shows the code that decides how the name input fields would look and provides the geographical code for where the input field should be rooted. Row **85 – 116** is a bit more complicated as the aim was to increase the number of fields or decrease them depending on the number of team members. 
+
+line 85 - 116
+
+The code for the dynamic team members fields is broken down in to digestible chunks; Department dropdown, member count and dynamic fields and update members fields. Department dropdown places the widget to the GUI, providing the departments than can be selected in a list. The selected input is then stored as a string. The members count and dynamic field section places the widget by creating the frame, it then stores the number of members in the variable “members_count” and automatically updates when the user changes the value in the spinbox. The default value is 1. The code then counts the values in the spinbox and defines a limit of 1 – 10 can be created and destroyed. Every time a user increases or reduces the value in the spinbox, the number of member fields will change as the code updates the member’s field. This is because “updates_members_fields()” updates automatically. 
+
+Line 118 to 137
+
+This portion of the code shows a function which allows the quiz to function as a quiz. It calls upon global variables which allows the code to be used across different functions within the app. Without this, Python would treat them as local variables and other functions such as “show_question()” wouldn’t see the updated values. This then appears multiple times throughout the remainder of the code. 
+This code uses .get().strip() which is a simple validation process to remove accidental spaces. This helps to clean the data and it is then stored in a new variable called “team_name_val”. 
+The code then gets the data such as selected department, member names, (which have been stripped) and stores the data in preparation for the start of the quiz. 
+
+Line 138 – 187
+
+This section of code is dedicated to defining functions that show the questions, check the answers and finally show the results. It calls upon the global variables again to track which question the user is on, and then ends the quiz once “if question_index >= len(questions)” has counted through all the questions stored in the questions variables in the question file. It then prints the stored and calculated result to the user so they can see their score or continues to cycle through the questions. 
 
 ### References
  [Image 1: AkzoNobel - Sikkens coating for McLaren F1 car](https://www.ipcm.it/en/post/akzonobel-powers-mclarens-2025-f1.aspx)
