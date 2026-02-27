@@ -102,5 +102,17 @@ Line 138 – 187
 
 This section of code is dedicated to defining functions that show the questions, check the answers and finally show the results. It calls upon the global variables again to track which question the user is on, and then ends the quiz once “if question_index >= len(questions)” has counted through all the questions stored in the questions variables in the question file. It then prints the stored and calculated result to the user so they can see their score or continues to cycle through the questions. 
 
+### Testing
+ Automated testing was used with unittesting. This method was selected as it makes the most sense to me out of the options I have tried. The use of unittest is beneficial as it improves code quality. It does so by providing a “safety net” as it forces the developer to think of errors that will occur ahead of time. This causes the developer to think of the errors ahead of time while writing the code which reduces the error in the code in the first place. 
+ 
+Secondly, unit testing before the code is even written with clear “fail” or “ok” feedback helps track errors as they occur. This makes for easier development as errors can be dealt with straight away instead of tracking them down later and potentially changing the entire code to fix the errors. 
+These two examples alone lead to reduced debugging time so makes the development process more efficient. It also leads to modularity and thus better design of the main code as it encourages the developer to write smaller testable units of code. 
+
+I favoured this method of manual testing which involves running the programme each time a section of code is added. While I did do this to an extent (as I had additional ideas of things to add as the project developed), It proved timely as I had to run through the entire quiz each time. Something I’ve learned from this experience is to plan out the unit test as I did the quiz framework. I had a general idea of things I knew I wanted to test but it would have been more effective to have planned it ahead of time along side the GUI framework. Reason for this is to avoid having to do any manual testing because I hadn’t already written the unittest.  
+
+My tests did pass however, I do not have enough tests to cover all the functions within my GUI. This is due to lack of forward thinking while writing the unit test and using manual tests to replace this. 
+Such example includes the validation of the member names. I tried to include a regex code to prevent unreasonable entries, however, I forgot to include this ahead of time and once the code was written, it was too hard to fix. Hence, the importance of planning the TDD better ahead of time. 
+
+### Documentation
 ### References
  [Image 1: AkzoNobel - Sikkens coating for McLaren F1 car](https://www.ipcm.it/en/post/akzonobel-powers-mclarens-2025-f1.aspx)
